@@ -9,105 +9,189 @@
 <body>
 	<div class="container">
 		<div class="jumbotron mt-2" id="div11">
+			<div class="btn-group" id="utibut">
+  				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+  				<div class="dropdown-menu">
+    				<button class="dropdown-item" id="zodcal_button">
+    					Know your zodiac
+    				</button>
+					<button class="dropdown-item" id="calbmi_button">
+						BMI calculator
+					</button>
+  				</div>
+			</div>
 			<h1 id="h11"><i class="fas fa-camera-retro fa-sm"></i> My Pictures Gallery</h1>	
 		</div>
 		<div id="bdiv">
 			<button type="button" class="btn btn-primary" id="movb11">Movies</button>
 			<button type="button" class="btn btn-warning" id="fampb11">Favourite Personalities</button>
+			<button type="button" class="btn btn-danger" id="ranb11">Randomize</button>
 		</div>
+		<div id="zodcal">
+			<center><b>Calculate your Astrological Signs</b></center>
+			<form name="zodiac">
+				<center>
+					<table bgcolor="#eeaa00" border="2" bordercolor="#000000" rules="none" cellspacing="0" cellpadding="4">
+						<tr><td><b><i>Year</i></b></td>
+						<td><div align="right"><input type="text" size="10" name="year" value="Birth Year" onClick=value=""></div></td>
+						<td><!--This empty field is just for appearance--></td>
+						<tr><td><b><i>Month</i></b></td>
+						<td><div align="right">
+						<select name="month">
+							<option value="x">Select Birth Month</option>
+							<option value="1">January</option><option value="2">February</option><option value="3">March</option>
+							<option value="4">April</option><option value="5">May</option><option value="6">June</option>
+							<option value="7">July</option><option value="8">August</option><option value="9">September</option>
+							<option value="10">October</option><option value="11">November</option>
+							<option value="12">December</option></select></div></td>
+						<td><!--This empty field is just for appearance--></td></tr>
+						<tr><td><b><i>Day</i></b></td>
+						<td><div align="right"><input type="text" name="date"value="Day" size="3" onClick=value=""></td>
+						<td><input type="button" value="Calculate" onClick="signs()"></div></td></tr>
+						<tr><td><b><i>Sun Sign:</i></b></td>
+						<td><div align="right"><input type="text" name="sign" size="12" value="" align="right"></div</td></tr>
+						<td><!--This empty field is just for appearance--></td></tr>
+						<tr><td><b><i>Chinese Sign:</i></b></td>
+						<td><div align="right"><input type="text" name="csign" size="12"></div></td>
+						<td><!--This empty field is just for appearance--></td></tr>
+					</table>
+				</center>
+			</form>
+			<p align="center">This free script provided by<br />
+			<a href="http://www.javascriptkit.com">JavaScriptKit</a></p>
+			<button type="button" class="btn btn-dark" id="zodcal_hide">Hide</button>
+		</div>
+		
+		<div id="calbmi">
+			<FORM NAME="BMI" method=POST>
+				<TABLE border=1>
+					<TR>
+					<TD><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
+					<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
+					<TD><DIV ALIGN=CENTER>Your BMI</DIV></TD>
+					<TD><DIV ALIGN=CENTER>My Comment</DIV></TD>
+					</TR>
+
+					<TR>
+					<TD><INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
+					<TD><INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
+					<TD><INPUT TYPE=TEXT NAME=bmi     SIZE=8 ></TD>
+					<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD>
+				</TABLE>
+				<P>
+				<INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
+				<INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
+			</FORM>
+			<HR>
+			<B>Disclaimer</B>: This form is based on the calculation of
+			<A HREF="http://phaster.com/unpretentious/bmi.html"><I>"Body Mass Index"</I></A>
+			and is only meant to be a demonstration of how Javascript(tm) could be used
+			on a Web Page. Information it contains may not be accurate and is not designed
+			or intended to serve as medical advice. I am not liable for any physical or
+			psychological damages suffered as a result of using this script.
+			<p>This free script provided by
+			<a href="http://javascriptkit.com">JavaScript
+			Kit</a></p>
+			<hr>
+			<button type="button" class="btn btn-dark" id="calbmi_hide">Hide</button>
+		</div>
+
 		<div id="mov">
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d1" class="col-lg-4 col-sm-6">
 					<img src="https://www.washingtonpost.com/graphics/2019/entertainment/oscar-nominees-movie-poster-design/img/black-panther-web.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d2" class="col-lg-4 col-sm-6">
 						<img src="https://www.joblo.com/assets/images/joblo/posters/2019/01/IO-poster-1.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">				
+				<div id="d3" class="col-lg-4 col-sm-6">				
 					<img src="https://www.digitalartsonline.co.uk/cmsdata/slideshow/3662115/baby-driver-rory-hi-res.jpg" class="img-thumbnail">		
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">				
+				<div id="d4" class="col-lg-4 col-sm-6">				
 						<img src="https://images.moviepostershop.com/replicas-movie-poster-1000778791.jpg" class="img-thumbnail">				
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d5" class="col-lg-4 col-sm-6">
 						<img src="https://akns-images.eonline.com/eol_images/Entire_Site/2018112/rs_634x939-181202195654-634.captain-marvel.12418.jpg?fit=inside|900:auto&output-quality=90" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d6" class="col-lg-4 col-sm-6">
 						<img src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg" class="img-thumbnail">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d7" class="col-lg-4 col-sm-6">
 						<img src="https://www.reeldeals.com/Images/HomeImages/26565.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d8" class="col-lg-4 col-sm-6">
 						<img src="https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main3.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d9" class="col-lg-4 col-sm-6">
 						<img src="https://www.midlandpaper.com/wp-content/uploads/2017/08/star-wars-poster-682x1024.jpg" class="img-thumbnail">
 				</div>
 			</div>	
 		</div>
-		<div id="famp">
+		<div id="famp" id="shuffle2">
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d10" class="col-lg-4 col-sm-6">
 					<img src="https://en.as.com/en/imagenes/2019/09/24/football/1569310945_447431_noticia_normal.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d11" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Bill-Gates.webp" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">				
+				<div id="d12" class="col-lg-4 col-sm-6">				
 					<img src="https://images.newscientist.com/wp-content/uploads/2019/06/18142824/einstein.jpg?width=1200" class="img-thumbnail">		
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">				
+				<div id="d13" class="col-lg-4 col-sm-6">				
 						<img src="https://i.ytimg.com/vi/cDxi6ozDwhc/maxresdefault.jpg" class="img-thumbnail">				
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d14" class="col-lg-4 col-sm-6">
 						<img src="https://images.daznservices.com/di/library/GOAL/e2/a2/lionel-messi-barcelona-2019-20_6v9f1g8ktz0516nmdti9iowmc.jpg?t=-1288858400&quality=100" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d15" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Jeff-Bezos.webp" class="img-thumbnail">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d16" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Warren-Buffett.webp" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d17" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Mark-Zuckerberg.webp" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d18" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Larry-Page.webp" class="img-thumbnail">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d19" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/10/Richest-People-Sergey-Brin.webp" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d20" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2017/08/Richest-People-in-the-World-Mukesh-Ambani.webp" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d21" class="col-lg-4 col-sm-6">
 						<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2017/08/Richest-People-in-the-World-Jack-Ma.webp" class="img-thumbnail">
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+				<div id="d22" class="col-lg-4 col-sm-6">
 						<img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/15DEE/production/_111028598_tom-cruise-getty.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d23" class="col-lg-4 col-sm-6">
 						<img src="https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2019/1/23/65101ffc35c44c83b421a2b3ad88ec56_18.jpg" class="img-thumbnail">
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div id="d24" class="col-lg-4 col-sm-6">
 						<img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/D9EF/production/_108319755_d3de1a8a-652f-4de5-b958-b9d7b7d0fb6b.jpg" class="img-thumbnail">
 				</div>
 			</div>
 		</div>	
 	</div>	
 	<script type="text/javascript" src="gallery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
