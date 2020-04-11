@@ -14,8 +14,6 @@ fav_button.addEventListener("click",function(){
 	mov.style.display = "none";
 });
 
-var rand_button = document.getElementById("ranb11");
-
 function signs() {
 	var start = 1901, birthyear = document.zodiac.year.value, date=document.zodiac.date.value, month=document.zodiac.month.selectedIndex;
 
@@ -167,4 +165,28 @@ calbmi_button.addEventListener("click",function(){
 var calbmi_hide = document.getElementById("calbmi_hide");
 calbmi_hide.addEventListener("click",function(){
 	calbmi.style.display = "none";
+});
+
+var rand_button = document.getElementById("ranb11");
+
+rand_button.addEventListener("click",function(){
+	for(var i = 0;i<5;i++)
+	{
+		var a = 'd' + Math.floor(Math.random()*9 + 1);
+		var b = 'd' + Math.floor(Math.random()*9 + 1);
+		var a1 = document.getElementById(a);
+		var b1 = document.getElementById(b);
+		var x1 = a1.innerHTML;
+		var y1 = b1.innerHTML;
+		a1.innerHTML = y1;
+		b1.innerHTML = x1;
+		var c = 'd' + Math.floor(Math.random()*15 + 10);
+		var d = 'd' + Math.floor(Math.random()*15 + 10);
+		var c1 = document.getElementById(c);
+		var d1 = document.getElementById(d);
+		var x2 = c1.innerHTML;
+		var y2 = d1.innerHTML;
+		c1.innerHTML = y2;
+		d1.innerHTML = x2;
+	}
 });
