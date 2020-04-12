@@ -8,9 +8,9 @@
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron mt-2" id="div11">
+		<div class="jumbotron mt-2" id="div11" style="background-color: #f9fcfb;">
 			<div class="btn-group" id="utibut">
-  				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utiliy</button>
+  				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utiliy</button>
   				<div class="dropdown-menu">
     				<button class="dropdown-item" id="zodcal_button">
     					Know your zodiac
@@ -28,12 +28,11 @@
 			<button type="button" class="btn btn-danger" id="ranb11">Randomize</button>
 		</div>
 		<div id="zodcal">
-			<center><b>Calculate your Astrological Signs</b></center>
 			<form name="zodiac">
 				<center>
-					<table bgcolor="#eeaa00" border="2" bordercolor="#000000" rules="none" cellspacing="0" cellpadding="4">
+					<table bgcolor="#61d4b3" rules="none" cellspacing="0" cellpadding="4" style="border-radius: 5%;">
 						<tr><td><b><i>Year</i></b></td>
-						<td><div align="right"><input type="text" size="10" name="year" value="Birth Year" onClick=value=""></div></td>
+						<td><div align="right"><input type="text" size="10" name="year" value="Birth Year" onClick=value="" style="border-radius: 30%;"></div></td>
 						<td><!--This empty field is just for appearance--></td>
 						<tr><td><b><i>Month</i></b></td>
 						<td><div align="right">
@@ -46,28 +45,29 @@
 							<option value="12">December</option></select></div></td>
 						<td><!--This empty field is just for appearance--></td></tr>
 						<tr><td><b><i>Day</i></b></td>
-						<td><div align="right"><input type="text" name="date"value="Day" size="3" onClick=value=""></td>
+						<td><div align="right"><input type="text" name="date"value="Day" size="3" onClick=value="" style="border-radius: 30%;"></td>
 						<td><input type="button" value="Calculate" onClick="signs()"></div></td></tr>
 						<tr><td><b><i>Sun Sign:</i></b></td>
-						<td><div align="right"><input type="text" name="sign" size="12" value="" align="right"></div</td></tr>
+						<td><div align="right"><input type="text" name="sign" size="12" value="" align="right" style="border-radius: 30%;"></div</td></tr>
 						<td><!--This empty field is just for appearance--></td></tr>
 						<tr><td><b><i>Chinese Sign:</i></b></td>
-						<td><div align="right"><input type="text" name="csign" size="12"></div></td>
+						<td><div align="right"><input type="text" name="csign" size="12" style="border-radius: 30%;"></div></td>
 						<td><!--This empty field is just for appearance--></td></tr>
 					</table>
 				</center>
 			</form>
+			<br>
 			<button type="button" class="btn btn-dark" id="zodcal_hide">Hide</button>
 		</div>
 		
-		<div id="calbmi">
-			<FORM NAME="BMI" method=POST>
+		<div id="calbmi" style="color: black;">
+			<FORM NAME="BMI" method="POST">
 				<TABLE border=1>
 					<TR>
-					<TD><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
-					<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
-					<TD><DIV ALIGN=CENTER>Your BMI</DIV></TD>
-					<TD><DIV ALIGN=CENTER>My Comment</DIV></TD>
+					<TD style="background-color: #61d4b3;"><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
+					<TD style="background-color: #61d4b3;"><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
+					<TD style="background-color: #61d4b3;"><DIV ALIGN=CENTER>Your BMI</DIV></TD>
+					<TD style="background-color: #61d4b3;"><DIV ALIGN=CENTER>My Comment</DIV></TD>
 					</TR>
 
 					<TR>
@@ -87,9 +87,6 @@
 			on a Web Page. Information it contains may not be accurate and is not designed
 			or intended to serve as medical advice. I am not liable for any physical or
 			psychological damages suffered as a result of using this script.
-			<p>This free script provided by
-			<a href="http://javascriptkit.com">JavaScript
-			Kit</a></p>
 			<hr>
 			<button type="button" class="btn btn-dark" id="calbmi_hide">Hide</button>
 		</div>
@@ -189,7 +186,7 @@
 	</div>
 
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron" style="background-color: #f9fcfb;">
 	  		<h1 class="display-4">Contact Me:</h1>
 	  		<hr class="my-4">
 	  		<p id="contact">Name : Ashish Dev Nagar || Regno : 201800482 || email : princenagar093@gamil.com</p>
